@@ -35,7 +35,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('login_user/',LoginUser.as_view()),
     path('register_user/', RegisterUser.as_view({'post':'create'})),
-    path('api/', include(router.urls))
+    path('api/', include(router.urls)),
+    path('ws/', include('models_app.routing.websocket_urlpatterns')),
 ]
 
 # consider create function for now only, the incoming data will be in form of:
