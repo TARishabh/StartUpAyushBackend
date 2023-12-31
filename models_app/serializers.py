@@ -55,7 +55,7 @@ class StartUpPostSerializer(serializers.ModelSerializer):
 class StartUpListSerializer(serializers.ModelSerializer):
     class Meta(object):
         model = Startup
-        fields = ['id','owner','startup_name','startup_description','industry_sector','founding_date','founder_bio','website_url','contact_person','contact_number']
+        fields = ['id','owner','startup_name','startup_description','industry_sector','founding_date','founder_bio','website_url','contact_person','contact_number','banner_image']
 
 class StartUpUpdateSerializer(serializers.ModelSerializer):
     class Meta(object):

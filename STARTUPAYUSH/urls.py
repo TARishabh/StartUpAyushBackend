@@ -24,7 +24,8 @@ from models_app.views import (
     InvestorViewset,
     )
 from rest_framework import routers
-
+from django.conf import settings
+from django.conf.urls.static import static
 
 router = routers.DefaultRouter()
 router.register(r'startup',StartUpViewset)
@@ -36,8 +37,8 @@ urlpatterns = [
     path('login_user/',LoginUser.as_view()),
     path('register_user/', RegisterUser.as_view({'post':'create'})),
     path('api/', include(router.urls)),
-    path('ws/', include('models_app.routing.websocket_urlpatterns')),
-]
+    # path('ws/', include('models_app.routing')),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 # consider create function for now only, the incoming data will be in form of:
 # {}

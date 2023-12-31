@@ -35,6 +35,7 @@ class Startup(models.Model):
     registration_number = models.CharField(max_length=20, unique=True, null=False, blank=False)
     contact_person = models.CharField(max_length=150, null=True, blank=True)
     contact_number = models.CharField(max_length=12, null=True, blank=True)
+    banner_image = models.ImageField(null=True,blank=True)
 
     def __str__(self):
         return self.startup_name
